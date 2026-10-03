@@ -1,0 +1,237 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f4f4f7;
+  color: #222;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+/* Cabeçalho */
+header {
+  background-color: #2f6f4f;
+  color: white;
+  padding: 28px 16px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+header h1 {
+  margin: 0 0 6px 0;
+  font-size: 28px;
+  letter-spacing: 0.3px;
+}
+
+header p {
+  margin: 0;
+  opacity: 0.85;
+  font-size: 15px;
+}
+
+/* Conteúdo principal */
+main {
+  width: 100%;
+  max-width: 480px;
+  margin: 28px auto;
+  padding: 0 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  flex: 1;
+}
+
+/* Cartões */
+.cartao {
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.cartao:hover {
+  box-shadow: 0 5px 14px rgba(0, 0, 0, 0.14);
+  transform: translateY(-1px);
+}
+
+.cartao h2 {
+  margin: 0 0 14px 0;
+  font-size: 18px;
+}
+
+/* Formulário */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+label {
+  font-size: 14px;
+  font-weight: bold;
+  margin-top: 8px;
+}
+
+input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  background-color: white;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input:focus {
+  border-color: #2f6f4f;
+  box-shadow: 0 0 0 3px rgba(47, 111, 79, 0.12);
+}
+
+/* Botões */
+button {
+  margin-top: 16px;
+  padding: 10px 14px;
+  background-color: #2f6f4f;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.15s ease,
+    box-shadow 0.2s ease;
+}
+
+button:hover {
+  background-color: #255a3f;
+  box-shadow: 0 3px 7px rgba(0, 0, 0, 0.15);
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+/* Lista de produtos */
+ul#lista-produtos {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#lista-produtos li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 14px 16px;
+  background-color: #f4f5f7;
+  border-radius: 7px;
+  margin-bottom: 0;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#lista-produtos li:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+}
+
+.texto-produto {
+  flex: 1;
+  min-width: 160px;
+  font-size: 0.95rem;
+  word-break: break-word;
+}
+
+/* Área dos botões */
+.acoes {
+  display: flex;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.acoes button {
+  margin-top: 0;
+  padding: 7px 14px;
+  font-size: 0.85rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+.acoes button:hover {
+  box-shadow: none;
+}
+
+.acoes button:active {
+  transform: scale(0.96);
+}
+
+/* Botão remover */
+.remover {
+  background-color: red;
+}
+
+button.remover:hover {
+  background-color: red;
+  opacity: 0.85;
+}
+
+/* Rodapé */
+.rodape {
+  background-color: #19191a;
+  color: #ccc;
+  text-align: center;
+  padding: 16px;
+  margin-top: auto;
+  font-size: 14px;
+}
+
+/* Responsividade */
+@media (max-width: 480px) {
+  header {
+    padding: 24px 14px;
+  }
+
+  header h1 {
+    font-size: 24px;
+  }
+
+  main {
+    margin: 20px auto;
+    padding: 0 12px;
+    gap: 14px;
+  }
+
+  .cartao {
+    padding: 16px;
+  }
+
+  #lista-produtos li {
+    align-items: flex-start;
+  }
+
+  .texto-produto {
+    min-width: 100%;
+  }
+
+  .acoes {
+    width: 100%;
+  }
+
+  .acoes button {
+    flex: 1;
+  }
+}
